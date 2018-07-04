@@ -74,15 +74,12 @@ $('.hamburger').click(function() {
       var t = {
         name: jQuery(".order-form").find("input[name=name]").val(),
         phone: jQuery(".order-form").find("input[name=phone]").val(),
-        number: jQuery(".order-form").find("input[name=number]").val(),
-        product: jQuery(".order-form").find("input[name=product]").val(),
-        subject: jQuery(".order-form").find("input[name=subject]").val()
       };
       ajaxSend('.order-form', t);
     }
   });
 
-  $(".consultation-form").validate({
+  $(".making-form").validate({
     messages: {
       name: "Введите ваше Имя",
       phone: "Введите ваш телефон",
@@ -95,14 +92,19 @@ $('.hamburger').click(function() {
     },
     submitHandler: function(form) {
       var t = {
-        name: jQuery(".consultation-form").find("input[name=name]").val(),
-        phone: jQuery(".consultation-form").find("input[name=phone]").val(),
-        subject: jQuery(".consultation-form").find("input[name=subject]").val()
+        name: jQuery(".making-form").find("input[name=name]").val(),
+        phone: jQuery(".making-form").find("input[name=phone]").val(),
       };
-      ajaxSend('.consultation-form', t);
+      ajaxSend('.making-form', t);
     }
   });
-
+  
+  $("button").on("click", function(){
+    setTimeout(function() {
+      $('.form label').hide();
+    }, 2000);
+  });
+  
   function ajaxSend(formName, data) {
     jQuery.ajax({
       type: "POST",

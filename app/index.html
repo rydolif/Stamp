@@ -10,7 +10,6 @@
 	<link rel="icon" href="img/favicon.ico">
 	<meta name="theme-color" content="#000">
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
@@ -50,7 +49,7 @@
 						<svg><use xlink:href="#icon-call"></use></svg>
 					</div>
 					<a href="tel:+7(915)038-90-91" class="header__btn_tel">+7 (915) 038-90-91</a>
-					<a href="#" class="header__btn_order open">Заказать звонок</a>
+					<a href="#" class="header__btn_order order_open">Заказать звонок</a>
 				</div>
 
 			</div>
@@ -72,7 +71,7 @@
 					<li>Срочное изготовление от <b>2 часов</b></li>
 				</ul>
 
-				<a href="#" class="btn"><div class="btn__mod"><svg><use xlink:href="#icon-call"></use></svg></div>Заказать печать</a>
+				<a href="#" class="btn making_open"><div class="btn__mod"><svg><use xlink:href="#icon-call"></use></svg></div>Заказать печать</a>
 
 			</div>
 		</section>
@@ -431,7 +430,7 @@
 
 				<div class="row">
 
-					<div class="col-xl-6">
+					<div class="col-md-6">
 						<ul>
 							<li>
 								<div class="scheme__namber">1</div>
@@ -461,7 +460,7 @@
 						</ul>
 					</div>
 
-					<div class="col-xl-6">
+					<div class="col-md-6">
 						<img src="img/scheme-bg.png" alt="svg" class="services__bg">
 						<div class="box">
 							<h3>Закажите изготовление</h3>
@@ -495,7 +494,7 @@
 					<div class="map__content_bottom">
 						<h4>Остались вопросы?</h4>
 						<p>Позвоните на наш номер или закажите звонок</p>
-						<a href="#" class="btn"><div class="btn__mod"><svg><use xlink:href="#icon-call"></use></svg></div>Заказать звонок</a>
+						<a href="#" class="btn order_open"><div class="btn__mod"><svg><use xlink:href="#icon-call"></use></svg></div>Заказать звонок</a>
 					</div>
 				</div>
 			</div>
@@ -536,7 +535,7 @@
 						<svg><use xlink:href="#icon-call"></use></svg>
 					</div>
 					<a href="tel:+7(915)038-90-91" class="header__btn_tel">+7 (915) 038-90-91</a>
-					<a href="#" class="header__btn_order open">Заказать звонок</a>
+					<a href="#" class="header__btn_order order_open">Заказать звонок</a>
 				</div>
 
 			</div>
@@ -548,57 +547,53 @@
 	</footer>
 
 
-<!-- 
+
 	<div class="modal" id="order">
+			<form action="sendmail.php" class="order-form form" method="post">
 
-			<form action="sendmail.php" class="order-form" method="post">
-
-				<input type="hidden" name="subject" value="Оформление заказа">
-				<input type="hidden" name="product" value="Стуло">
+				<input type="hidden" name="subject" value="Обратный звонок">
 				
-				<button class="close order_close" type="button">
+				<button class="close order_close">
 					<img src="img/icon/close.svg" alt="close" width="25" height="25">
 				</button>
 
-				<h2>Оформление заказа</h2>
-				<p class="sub-title">Вы заказываете</p>
+				<h2>Обратный звонок</h2>
+				<p class="sub-title">Заполните форму и мы обязательно Вам перезвоним</p>
 
-				<div class="modal__container">
-					<p>Arm Chair Queens Cosy Blue</p>
-					<div class="calculat">
-
-					<div class="quantity-block">
-						<button type="button" class="pluse button">+</button>
-							<input class="number num" type="number" name="number" value="1" data-price="15495" readonly>
-						<button type="button" class="minus button">-</button>
-					</div>
-
-					</div>
-					<b><span class="price">15 495</span><span> руб.</span></b>
-				</div>
-				
-
-				<h3>Ваши контактые данные</h3>
-
-				<div class="form-group">
-					<div><input type="text" class="form__field" name="name" placeholder="Введите ваше имя" required></div>
-					<div><input type="tel" name="phone" class="form__field" required placeholder="Ведите ваш телефон" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"></div>
-					<div><button type="submit" class="btn" name="submit" value="отправить">оформить заказ</button></div>
-				</div>
-
+				<div class="form__group"><input type="text" class="form__field" name="name" placeholder="Введите ваше имя" required></div>
+				<div class="form__group"><input type="tel" name="phone" class="form__field" required placeholder="Ведите ваш телефон" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"></div>
+				<button class="btn button" name="submit" value="отправить"><div class="btn__mod"><svg><use xlink:href="#icon-call"></use></svg></div>Заказать звонок</button>
 
 			</form>
 	</div>
 	
+
+	<div class="modal" id="making">
+			<form action="sendmail.php" class="making-form form" method="post">
+
+				<input type="hidden" name="subject" value="Изготовление печати">
+				
+				<button class="close making_close" type="button">
+					<img src="img/icon/close.svg" alt="close" width="25" height="25">
+				</button>
+
+				<h2>Изготовление печати</h2>
+				<p class="sub-title">Заполните форму и мы обязательно Вам перезвоним</p>
+
+				<div class="form__group"><input type="text" class="form__field" name="name" placeholder="Введите ваше имя" required></div>
+				<div class="form__group"><input type="tel" name="phone" class="form__field" required placeholder="Ведите ваш телефон" pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"></div>
+				<button class="btn button" name="submit" value="отправить"><div class="btn__mod"><svg><use xlink:href="#icon-call"></use></svg></div>Заказать печать</button>
+
+			</form>
+	</div>
+
 	<div class="modal" id="thanks">
 		<button class="close thanks_close" type="button">
 					<img src="img/icon/close.svg" alt="close" width="25" height="25">
 		</button>
-
-		<h2>Спасибо <br>за доверие!</h2>
-		<p>Мы обязательно с вами свяжемся!</p>
-		<img src="img/modal.jpg" alt="modal">
-	</div> -->
+		<h2>Спасибо <br>за обращение</h2>
+		<p>Мы свяжемся с Вами в течение 15 минут</p>
+	</div>
 
 	<script src="js/scripts.min.js"></script>
 	<script>
