@@ -1,0 +1,49 @@
+.btn
+	position: relative
+	display: inline-block
+	border: none
+	outline: none
+	padding: 22px 30px 22px 75px
+	border-radius: 40px
+	text-align: center
+	line-height: 1
+	color: $text
+	font-weight: 700
+	box-shadow: 5px 15px 20px rgba(237, 164, 7, .3)
+	background-image: linear-gradient(to right, #eda408, #fbd22f)
+	text-transform: uppercase
+	font-size: 14px
+
+	&:hover
+		outline: none
+		border: none
+		color: $text
+		text-decoration: none
+		cursor: pointer
+		background-image: linear-gradient(to bottom, rgb(255, 204, 1), rgb(255, 204, 1))
+		transition: all .3s
+
+	&:focus
+		outline: none
+		border: none
+		color: $text
+		text-decoration: none
+		cursor: pointer
+		background-image: linear-gradient(to bottom, rgb(206, 161, 0), rgb(206, 161, 0))
+		transition: all .3s
+
+	&__mod
+		position: absolute
+		left: 5px
+		top: 4px
+		width: 50px
+		height: 50px
+		background: #fff
+		border-radius: 100%
+		svg
+			position: absolute
+			top: 14px
+			left: 14px
+			width: 22px
+			height: 22px
+			fill: #eda407
