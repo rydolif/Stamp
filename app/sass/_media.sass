@@ -1,25 +1,33 @@
 
 @media only screen and (max-width : 1200px)
-
 	.header__btn
 		padding-right: 20px
 		padding-left: 60px
 
 	.logo
 		img
-			width: 100px
+			width: 120px
 			height: auto
 
 	.nav
 		li
 			margin-right: 15px
 
+		a
+			font-size: 12px
+
 	.box
 		top: 0
 		left: 0
 		margin: 0 auto
+	
+	.price
+		h2
+			margin-bottom: 40px
 
 	.services
+		padding-bottom: 50px
+
 		ul
 			column-count: 1
 			display: flex
@@ -48,85 +56,348 @@
 
 
 @media only screen and (max-width : 992px)
-	#thanks
-		padding: 40px
+	h1
+		font-size: 40px
+
+
+	.section
+		padding: 40px 0
+		h2
+			font-size: 30px
+			margin-bottom: 30px
+
+	.header
+		&-section
+			padding: 150px 0 100px 0
+			background-position: 30% 0
+
+		&__container
+			padding-right: 70px
+
+		.nav
+			position: fixed
+			display: block
+			width: 320px
+			height: 100%
+			flex-direction: column
+			right: -100%
+			top: 66px
+			z-index: -1
+			transition: all .3s
+
+			ul
+				display: flex
+				flex-direction: column
+				justify-content: center
+				margin-top: 40px
+				margin-left: 40px
+
+			li
+				margin: 0
+				margin-bottom: 10px
+
+			a
+				color: $text
+
+			&-active
+				right: 0
+				background-color: rgba(255, 255, 255, 1)
+				ul
+					margin-left: 40px
+					margin-right: 40px
+
+		.hamburger
+			display: block
+			z-index: 1001
+			right: 15px
+
+		.hamburger-box
+			right: 0
+	
+	.services
+		ul
+			margin-bottom: 30px
+
+		li
+			width: 50%
+
+	.price
+		.tabs
+			width: 100%
+			&__wrap
+				padding-bottom: 50px
+				&_block
+					padding: 10px
+
+	.about
+		margin-bottom: 40px
+		&__namber
+			font-size: 30px
+			margin-bottom: 5px
+
+	.why
+		margin-bottom: 40px
+		flex-direction: column
+		&__box
+			max-width: 100%
+			margin-bottom: 30px
+
+	.trust
+		&__item
+			width: 48%
+			margin-bottom: 35px
+			&:nth-child(n+5)
+				margin-bottom: 35px
+			&:nth-child(n+7)
+				margin-bottom: 0
+	
+	.scheme
+		li
+			padding-bottom: 15px
 
 	.modal
 		width: 320px
-		padding: 40px
+		padding: 25px
 
-	.nav
-		position: fixed
-		display: block
-		width: 320px
-		height: 100%
-		flex-direction: column
-		right: -100%
-		top: 80px
-		z-index: -1
-		transition: all .3s
 
-		ul
-			display: flex
+	.footer
+		padding: 20px 0
+
+		&__container
+			margin-bottom: 25px
 			flex-direction: column
-			justify-content: center
-			margin-top: 40px
-			margin-left: 40px
 
-		li
-			margin: 0
-			margin-bottom: 10px
+		.logo
+			margin-bottom: 20px
+			img
+				width: 140px
 
-		a
-			color: #fff
+		.nav
+			position: relative
 			display: block
-			&::before
-				content: ''
-				width: 0
-				transform: scale(0)
-				transition: all .3s
-				position: absolute
-				bottom: 0
-				width: 80%
-				height: 1px
-				background-color: $accent
-				z-index: -1
+			margin-bottom: 20px
 
-			&:hover
-				color: $accent
-				text-decoration: none
-				&::before
-					transform: scale(1)
-
-			&:focus
-				color: $accent
-				text-decoration: none
-				&::before
-					transform: scale(1)
-
-	.hamburger
-		display: block
-		z-index: 1001
-		right: 15px
-
-	.hamburger-box
-		right: 0
-
+	.map
+		&__content
+			top: 0
 
 
 @media only screen and (max-width : 767px)
+
 	.header
+		&-section
+			padding: 125px 0 50px 0
+			background-position: 20% 0
+
+			p
+				margin-bottom: 20px
+
+			ul
+				margin-bottom: 30px
+
+	.about
+		&__list
+			flex-wrap: wrap
+			justify-content: space-around
+
+		&__item
+			margin-bottom: 20px
+
+	
+	.why
+		.icon__block
+			&::before
+				width: 40px
+				height: 40px
+			svg
+				width: 45px
+				height: 45px
+
+	.trust
+		&__item
+			margin-bottom: 15px
+
+		.icon__block
+			width: 60px
+			height: 60px
+			&::before
+				width: 40px
+				height: 40px
+			svg
+				width: 45px
+				height: 45px
+
+	.scheme
+		ul
+			margin-bottom: 30px
+			&::before
+				display: none
+
+	.footer
+		.nav
+			display: none
 
 @media only screen and (max-width : 576px)
-	.header
+	h1
+		font-size: 30px
+	
+	input
+		height: 45px
+		line-height: 45px
+
+	.btn
+		padding: 15px 15px 15px 50px
+		&__mod
+			width: 35px
+			height: 35px
+			svg
+				top: 10px
+				left: 9px
+				width: 15px
+				height: 15px
+
+	.section
+		h2
+			font-size: 24px
+
+		h3
+			font-size: 20px
+
+		h4
+			font-size: 18px
+
+		p
+			font-size: 14px
+
+		.box
+			max-width: 400px
+			padding: 20px 0
+
+			&__center
+				padding: 10px 15px
+
+			&__bottom
+				padding: 10px 15px 0
+	
+	.header-section
+		li, p
+			font-size: 14px
+	
+	.services
+		.value
+			height: 40px
+			line-height: 40px
+
+	.why
+		.box
+			max-width: 400px
+			width: 100%
+			&__center
+				padding: 15px 0
+				p
+					span
+						font-size: 30px
+
+	.map
+		h2
+			font-size: 30px
+			margin-bottom: 10px
+			text-align: center
+
+		iframe
+			height: 300px
+
+		p
+			font-size: 14px
+			margin-bottom: 15px
+
+		&__content
+			position: relative
+			max-width: 100%
+			text-align: center
+			left: 0
+			margin-bottom: 30px
+
+			&_top
+				padding: 20px
+			&_bottom
+				padding: 20px
+
+		&__tel
+			font-size: 18px
+
+		&__mail
+			margin-bottom: 10px
+
+	.modal
+		.btn
+			padding: 0
+			height: 43px
 
 @media only screen and (max-width : 480px)
 	.header
+		.nav
+			top: 55px
+
+		&__btn
+			display: none
+
+	.nav
+		&__btn
+			display: block
+			margin: 0 40px
+
+	.section
+		.box
+			max-width: 100%
+			h3, p
+				padding: 0 15px
+
+			&__center
+				h3, p
+					padding: 0
 
 
+	.services
+		li
+			width: 100%
+		p
+			br
+				display: none
 
+	.price
+		.tabs
+			margin-bottom: 30px
+			ul
+				width: 90%
 
+	.trust
+		&__item
+			width: 100%
 
+	.why
+		li
+			padding-left: 70px
+			margin-bottom: 25px
+
+		p
+			br
+				display: none
+
+	.about
+		&__item
+			width: 100%
+			text-align: center
+			&:last-child
+				margin-bottom: 0
+
+	.footer
+		.header__btn
+			display: flex
+
+		.copy
+			span
+				font-size: 12px
 
 
 

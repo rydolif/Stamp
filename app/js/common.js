@@ -1,6 +1,20 @@
 $(function() {
 
+//-------------------------скорость якоря---------------------------------------
+$(".nav").on("click","a", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top - 90}, 'slow', 'swing');
 
+//--------------------закриття меню при кліку на ссилку якоря--------------------
+   $('.hamburger-active').removeClass('hamburger-active');
+   $('.header-menu').removeClass('header-menu');
+   $('.nav-active').removeClass('nav-active');
+
+});
+
+//--------------------------------slider------------------------------
 var one = new Swiper ('#one', {
   slidesPerView: 4,
   spaceBetween: 30,
@@ -8,6 +22,14 @@ var one = new Swiper ('#one', {
     el: '.swiper-pagination',
     clickable: true,
   },
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    }
+  }
 });
 
 var two = new Swiper ('#two', {
@@ -17,6 +39,14 @@ var two = new Swiper ('#two', {
     el: '.swiper-pagination',
     clickable: true,
   },
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    }
+  }
 });
 
 var three = new Swiper ('#three', {
@@ -26,6 +56,14 @@ var three = new Swiper ('#three', {
     el: '.swiper-pagination',
     clickable: true,
   },
+  breakpoints: {
+    576: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 3
+    }
+  }
 });
 
 //-------------------------------------------tabs------------------------------
