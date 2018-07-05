@@ -1,8 +1,13 @@
 
 @media only screen and (max-width : 1200px)
-	.header__btn
-		padding-right: 20px
-		padding-left: 60px
+	.header
+		&-section
+			padding: 150px 0 100px 0
+			background-position: 30% 0
+			
+		&__btn
+			padding-right: 20px
+			padding-left: 60px
 
 	.logo
 		img
@@ -59,7 +64,6 @@
 	h1
 		font-size: 40px
 
-
 	.section
 		padding: 40px 0
 		h2
@@ -98,6 +102,7 @@
 
 			a
 				color: $text
+				font-size: 14px
 
 			&-active
 				right: 0
@@ -202,7 +207,11 @@
 
 		&__item
 			margin-bottom: 20px
-
+	
+	.price
+		.tabs
+			ul
+				width: 70%
 	
 	.why
 		.icon__block
@@ -216,7 +225,6 @@
 	.trust
 		&__item
 			margin-bottom: 15px
-
 		.icon__block
 			width: 60px
 			height: 60px
@@ -243,7 +251,8 @@
 	
 	input
 		height: 45px
-		line-height: 45px
+		&::placeholder
+			line-height: 45px
 
 	.btn
 		padding: 15px 15px 15px 50px
