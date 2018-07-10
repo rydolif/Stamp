@@ -1,5 +1,17 @@
 $(function() {
 
+
+//----------------------------------------scroll---------------------------
+function scrollPane() {
+  $('.price-container').jScrollPane();
+};
+
+scrollPane();
+
+$(window).resize(function(){
+  scrollPane();
+});
+
 //-------------------------скорость якоря---------------------------------------
 $(".nav").on("click","a", function (event) {
     event.preventDefault();
@@ -11,7 +23,6 @@ $(".nav").on("click","a", function (event) {
    $('.hamburger-active').removeClass('hamburger-active');
    $('.header-menu').removeClass('header-menu');
    $('.nav-active').removeClass('nav-active');
-
 });
 
 //--------------------------------slider------------------------------
@@ -146,7 +157,7 @@ $('.hamburger').click(function() {
   function ajaxSend(formName, data) {
     jQuery.ajax({
       type: "POST",
-      url: "sendmail.php",
+      url: "/stamp/wp-content/themes/stamp/sendmail.php",
       data: data,
       success: function() {
         $(".modal").popup("hide");
@@ -181,7 +192,7 @@ $(window).on('load', function(){
 {
   'use strict';
 
-  var file     = 'img/symbols.html',
+  var file     = '/stamp/wp-content/themes/stamp/img/symbols.html',
       revision = 1.3;
 
   if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )

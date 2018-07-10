@@ -47,14 +47,16 @@ gulp.task('js', function() {
 		'app/libs/jquery.popupoverlay.js',
 		'app/libs/swiper/swiper.min.js',
 		'app/libs/fancybox/jquery.fancybox.js',
-		'app/libs/animation/wow.min.js',
-		'app/libs/myParallax.js',
+		'app/libs/jscrollpane/jquery.jscrollpane.js',
+		'app/libs/jscrollpane/jquery.mousewheel.js',
+		// 'app/libs/animation/wow.min.js',
+		// 'app/libs/myParallax.js',
 		// 'app/libs/video/jquery.mb.YTPlayer.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(plumber())
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify()) // Mifify js (opt.)
+	// .pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browsersync.reload({ stream: true }))
 });
