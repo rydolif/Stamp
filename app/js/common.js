@@ -23,58 +23,30 @@ $(".nav").on("click","a", function (event) {
    $('.hamburger-active').removeClass('hamburger-active');
    $('.header-menu').removeClass('header-menu');
    $('.nav-active').removeClass('nav-active');
+
 });
 
 //--------------------------------slider------------------------------
-var one = new Swiper ('#one', {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    576: {
-      slidesPerView: 2
-    },
-    768: {
-      slidesPerView: 3
-    }
-  }
-});
+$('.tabs__wrap').each(function(i, el) {
+  var $this = $(this);
+  $this.addClass("tabs__wrap-" + i);
 
-var two = new Swiper ('#two', {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    576: {
-      slidesPerView: 2
+  tabs = new Swiper ('.tabs__wrap-' + i, {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-    768: {
-      slidesPerView: 3
-    }
-  }
-});
-
-var three = new Swiper ('#three', {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    576: {
-      slidesPerView: 2
+    breakpoints: {
+      576: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
     },
-    768: {
-      slidesPerView: 3
-    }
-  }
+  });
 });
 
 //-------------------------------------------tabs------------------------------
@@ -90,6 +62,24 @@ $('.tabs ul a').click(function(event){
 
   var selectTab = $(this).attr('href');
   $(selectTab).fadeIn();
+
+  tabs = new Swiper ('.tabs__wrap', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
+    },
+  });
+
 });
 //------------------------------гамбургер-----------------------------
 $('.hamburger').click(function() {
@@ -102,11 +92,11 @@ $('.hamburger').click(function() {
   $('.modal').popup({transition: 'all 0.3s'});
 
 //------------------------------------form-------------------------------------------
-	$('input[type="tel"]').mask('+0 (000) 000-00-00');
+  $('input[type="tel"]').mask('+0 (000) 000-00-00');
 
-	jQuery.validator.addMethod("phoneno", function(phone_number, element) {
-	   return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
-	}, "Введите Ваш телефон");
+  jQuery.validator.addMethod("phoneno", function(phone_number, element) {
+     return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
+  }, "Введите Ваш телефон");
 
   $(".order-form").validate({
     messages: {
@@ -157,7 +147,7 @@ $('.hamburger').click(function() {
   function ajaxSend(formName, data) {
     jQuery.ajax({
       type: "POST",
-      url: "/stamp/wp-content/themes/stamp/sendmail.php",
+      url: "/wp-content/themes/stamp/sendmail.php",
       data: data,
       success: function() {
         $(".modal").popup("hide");
@@ -192,7 +182,7 @@ $(window).on('load', function(){
 {
   'use strict';
 
-  var file     = '/stamp/wp-content/themes/stamp/img/symbols.html',
+  var file     = '/wp-content/themes/stamp/img/symbols.html',
       revision = 1.3;
 
   if( !document.createElementNS || !document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' ).createSVGRect )
